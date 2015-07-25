@@ -5,15 +5,16 @@ except ImportError:
 
 config = {
     'description': 'Provides a dsl to generate random strings in forbidding context free grammars',
-    'author': 'Jonah Hooper, Jeroem Smith',
-    'url': 'URL to get it at.',
+    'author': 'Jonah Hooper, Jeroen Schmidt',
+    'url': '',
     'download_url': '',
     'author_email': 'jonah.graham.hooper@gmail.com',
     'version': '0.1',
     'install_requires': ['nose'],
     'packages': [],
     'scripts': [],
-    'name': 'rcfg'
+    'name': 'rcfg',
+    'licence': 'MIT'
 }
 
 setup(**config)
