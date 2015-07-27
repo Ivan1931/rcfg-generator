@@ -1,8 +1,3 @@
-try:
-    from setuptools import setuptools
-except ImportError:
-    from distutils.core import setup
-
 config = {
     'description': 'Provides a dsl to generate random strings in forbidding context free grammars',
     'author': 'Jonah Hooper, Jeroen Schmidt',
@@ -10,11 +5,16 @@ config = {
     'download_url': '',
     'author_email': 'jonah.graham.hooper@gmail.com',
     'version': '0.1',
-    'install_requires': ['nose'],
+    'install_requires': ['nose', 'funcy'],
     'packages': [],
     'scripts': [],
     'name': 'rcfg',
     'licence': 'MIT'
 }
 
-setup(**config)
+try:
+    from setuptools import setuptools
+    setuptools.setup(**config)
+except ImportError:
+    from distutils.core import setup
+    setup(**config)
