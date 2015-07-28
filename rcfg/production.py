@@ -25,15 +25,6 @@ class Production:
         self.trigger_variable = trigger_variable
         self.transform_to = transform_to
 
-    def can_transform(self, str):
-        """ Checks if production permitting and forbidding conditions are meet
-
-        Arguments:
-        str -- List of symboles that production is to be applied to
-        """
-
-        return true
-
     def trigger_variable_locations(self, str):
         """ Determines the possitions of all trigger_variables present in string
 
