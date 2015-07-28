@@ -51,7 +51,7 @@ class Production:
         """
 
         self.str = str
-        self.possition = trigger_variable_locations(str).[0]
+        self.possition = trigger_variable_locations(str)[0]
 
         str = s[:possition-1] + transform_to + s[possition:]
 
@@ -79,4 +79,3 @@ class Production:
             return funcy.mapcat(lambda sym: sym if sym == self.trigger_variable else transform_to, string)
         else:
             return string
-
