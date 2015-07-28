@@ -1,5 +1,6 @@
 import funcy
 
+
 class Production:
     """Deals with a production"""
     def __init__(self, permitting, forbidding, trigger_variable, transform_to):
@@ -16,6 +17,7 @@ class Production:
                         all instances of a trigger_variable will be replaced by
                         instances of transform_to.
         """
+        
         self.permitting = permitting
         self.forbidding = forbidding
         self.trigger_variable = trigger_variable
@@ -27,7 +29,7 @@ class Production:
             if forbidden in string:
                 return False
         for permitted in self.permitting:
-            if not permitted in permitting:
+            if permitted not in permitting:
                 return False
         return True
 
