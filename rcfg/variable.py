@@ -1,5 +1,7 @@
 from symbol import Symbol
 
 
-def Variable(Symbol):
-    pass
+class Variable(Symbol):
+    def __init__(self, symbol):
+        pass
+
