@@ -1,9 +1,9 @@
 import funcy
 
+
 class Production:
     """Deals with a production"""
     def __init__(self, permitting, forbidding, trigger_variable, transform_to):
-
         """Creates a new production
         Arguments:
         permitting -- List of permitting variables. All of these must be present
@@ -18,34 +18,10 @@ class Production:
                         trigger_variable will be replaced by
                         instances of transform_to.
         """
-
         self.permitting = permitting
         self.forbidding = forbidding
         self.trigger_variable = trigger_variable
         self.transform_to = transform_to
-
-    def trigger_variable_locations(self, str):
-        """ Determines the possitions of all trigger_variables present in string
-
-        Arguments:
-        str -- List of symboles that production is to be applied to
-        """
-
-        return []
-
-    def transform_symbols(self, str):
-        """Performs a production on string
-
-        Arguments:
-        str -- List of symboles that production is to be applied to
-        """
-
-        self.str = str
-        self.possition = trigger_variable_locations(str)[0]
-
-        str = s[:possition-1] + transform_to + s[possition:]
-
-        return str
 
     def can_perform(self, string):
         """Checks if the production can happen in the given context"""
@@ -73,4 +49,4 @@ class Production:
                     possible.append(funcy.flatten([self.transform_to if jdx == idx else val for (jdx, val) in enumerate(string)]))
             return possible
         else:
-            return string
+            return []
