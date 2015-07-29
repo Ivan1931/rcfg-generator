@@ -3,4 +3,4 @@ class Symbol(object):
         self.symbol = symbol
 
     def __eq__(self, that):
-        self.symbol == that.symbol and self.__class__ == that.__class__
+        return self.symbol == that.symbol and self.__class__ == that.__class__

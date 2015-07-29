@@ -1,6 +1,5 @@
 import funcy
 
-
 class Production:
     """Deals with a production"""
     def __init__(self, permitting, forbidding, trigger_variable, transform_to):
@@ -54,7 +53,8 @@ class Production:
             if forbidden in string:
                 return False
         for permitted in self.permitting:
-            if permitted not in permitting:
+            if permitted not in string:
+                print permitted.symbol
                 return False
         return True
 
@@ -67,6 +67,10 @@ class Production:
             * The origional string if the context does not allow productions
         """
         if self.can_perform(string):
-            return funcy.mapcat(lambda sym: sym if sym == self.trigger_variable else transform_to, string)
+            possible = []
+            for idx in range(0, len(string)):
+                if string[idx] == self.trigger_variable:
+                    possible.append(funcy.flatten([self.transform_to if jdx == idx else val for (jdx, val) in enumerate(string)]))
+            return possible
         else:
             return string
