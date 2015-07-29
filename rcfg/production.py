@@ -1,7 +1,7 @@
 import funcy
 
 
-class Production:
+class Production(object):
     """Deals with a production"""
     def __init__(self, permitting, forbidding, trigger_variable, transform_to):
         """Creates a new production
