@@ -1,9 +1,8 @@
 import funcy
 
-
 class Production(object):
     """Deals with a production"""
-    def __init__(self, permitting, forbidding, trigger_variable, transform_to):
+    def __init__(self, permitting, forbidding, trigger_variable, transform_to, meta={}):
         """Creates a new production
         Arguments:
         permitting -- List of permitting variables. All of these must be present
@@ -17,6 +16,9 @@ class Production(object):
                         (represented as a list of symboles) all instances of a
                         trigger_variable will be replaced by
                         instances of transform_to.
+        meta -- A hash containing any extra data about the production we want.
+                NOTE: Jereom, I don't think this is the best way to pass info
+                about priority...
         """
         self.permitting = permitting
         self.forbidding = forbidding

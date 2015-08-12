@@ -14,7 +14,7 @@ class Grammar(object):
         self.productions = productions
 
     def possible_productions(self, string):
-        """Create list of possible productions
+        """Create list of productions that can be applied to `string`
 
         Arguments:
         string -- list of symbols representing the string
